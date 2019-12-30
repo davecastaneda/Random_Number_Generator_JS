@@ -1,15 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>JavaScript Random Number Generator</title>
+    <link rel="stylesheet" type="text/css" href="random.css">
+    <meta name="description" content="Use Vanilla JavaScript to generator a number in a given range!">
+
 </head>
 
 <body>
+    <script>
+        var sound = new Audio();
+        sound.src = 'chime.mp3';
+    </script>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8" align="center">
+            <h1>JavaScript Random Number Generator</h1>
+            <div class="myform">
+                I will generate a random integer between <br><br><input type="number" id="min_value"
+                    placeholder="Min Value"><br>
+                <br>and<br><br>
+                <input type="number" id="max_value" placeholder="Max Value"><br>
+                <br><br>
+                <button id="myBut" onclick="generate()" onmousedown="sound.play()">Generate!</button><br><br>
+                <div class="green" id="output"> </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function randNum(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
 
+        function generate() {
+            let min = document.getElementById('min_value').value;
+            let max = document.getElementById('max_value').value;
+            let rand = randNum(min, max);
+            document.getElementById("output").innerHTML = rand;
+        }
+
+        document.getElementById("myBut").addEventListener("click", generate);
+    </script>
 </body>
 
 </html>

@@ -8,3 +8,9 @@ Math.floor();
 
 // Math.ceil() rounds a number UP to the nearest integer
 Math.ceil();
+
+function randNum(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
