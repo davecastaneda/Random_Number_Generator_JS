@@ -36,12 +36,12 @@ body {
   padding: 15px;
 }
 
-/* Column width for small devices (i.e. smart phones)*/
+/* Column width for small devices */
 [class*="col-"] {
   width: 100%;
 }
 
-/* Column width for large devices (i.e. computers)*/
+/* Column width for large devices */
 @media only screen and (min-width: 768px) {
   .col-1 {
     width: 8.33%;
@@ -81,7 +81,7 @@ body {
   }
 }
 
-/* Column width for large devices (i.e. tablets)*/
+/* Column width for large devices */
 @media only screen and (min-width: 600px) {
   .col-t-1 {
     width: 8.33%;
